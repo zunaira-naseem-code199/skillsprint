@@ -7,8 +7,13 @@ Routes,
 Route,
 
 } from "react-router-dom";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 import AppLayout from "./layouts/AppLayout";
+
+import Login from "./pages/Login";
+
+import Register from "./pages/Register";
 
 import Dashboard from "./pages/Dashboard";
 
@@ -32,71 +37,64 @@ return (
 
 <Routes>
 
-<Route
+  {/* Authentication Routes */}
 
-path="/"
+  <Route
+    path="/login"
+    element={<Login />}
+  />
 
-element={<AppLayout />}
+  <Route
+    path="/register"
+    element={<Register />}
+  />
 
+  {/* Protected Application */}
+
+  <Route
+  path="/"
+  element={
+    <ProtectedRoute>
+      <AppLayout />
+    </ProtectedRoute>
+  }
 >
+    <Route
+      index
+      element={<Dashboard />}
+    />
 
-<Route
+    <Route
+      path="goals"
+      element={<Goals />}
+    />
 
-index
+    <Route
+      path="tasks"
+      element={<Tasks />}
+    />
 
-element={<Dashboard />}
+    <Route
+      path="journal"
+      element={<Journal />}
+    />
 
-/>
+    <Route
+      path="certificates"
+      element={<Certificates />}
+    />
 
-<Route
+    <Route
+      path="profile"
+      element={<Profile />}
+    />
 
-path="goals"
+    <Route
+      path="settings"
+      element={<Settings />}
+    />
 
-element={<Goals />}
-
-/>
-
-<Route
-
-path="tasks"
-
-element={<Tasks />}
-
-/>
-
-<Route
-
-path="journal"
-
-element={<Journal />}
-
-/>
-
-<Route
-
-path="certificates"
-
-element={<Certificates />}
-
-/>
-
-<Route
-
-path="profile"
-
-element={<Profile />}
-
-/>
-
-<Route
-
-path="settings"
-
-element={<Settings />}
-
-/>
-
-</Route>
+  </Route>
 
 </Routes>
 

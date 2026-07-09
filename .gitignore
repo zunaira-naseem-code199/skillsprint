@@ -1,9 +1,16 @@
+# Dependencies
 client/node_modules
-
 server/node_modules
 
-.env
+# Environment Variables
+server/.env
 
+# Build
 dist
+client/dist
 
+# VS Code
 .vscode
+
+# OS Files
+.DS_Store

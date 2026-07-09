@@ -1,111 +1,139 @@
 import { NavLink } from "react-router-dom";
-function Sidebar() {
+import { Rocket, X } from "lucide-react";
 
+function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const menuItems = [
+    { name: "Dashboard", path: "/", icon: "🏠" },
+    { name: "Goals", path: "/goals", icon: "🎯" },
+    { name: "Tasks", path: "/tasks", icon: "✅" },
+    { name: "Journal", path: "/journal", icon: "📖" },
+    { name: "Certificates", path: "/certificates", icon: "🏆" },
+    { name: "Profile", path: "/profile", icon: "👤" },
+    { name: "Settings", path: "/settings", icon: "⚙️" },
+  ];
 
-  {
-    name: "Dashboard",
-    path: "/",
-    icon: "🏠",
-  },
-
-  {
-    name: "Goals",
-    path: "/goals",
-    icon: "🎯",
-  },
-
-  {
-    name: "Tasks",
-    path: "/tasks",
-    icon: "✅",
-  },
-
-  {
-    name: "Journal",
-    path: "/journal",
-    icon: "📖",
-  },
-
-  {
-    name: "Certificates",
-    path: "/certificates",
-    icon: "🏆",
-  },
-
-  {
-    name: "Profile",
-    path: "/profile",
-    icon: "👤",
-  },
-
-  {
-    name: "Settings",
-    path: "/settings",
-    icon: "⚙️",
-  },
-
-];
   return (
+    <>
+      {/* Mobile Overlay */}
 
-    <aside className="w-64 bg-white border-r min-h-screen p-6">
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
-      <h2 className="text-lg font-semibold mb-8">
+      {/* Sidebar */}
 
-        Navigation
+      <aside
+        className={`fixed top-0 left-0 w-64 h-screen bg-white border-r border-slate-200 flex flex-col justify-between z-50 transition-transform duration-300
 
-      </h2>
+        ${
+          sidebarOpen
+            ? "translate-x-0"
+            : "-translate-x-full"
+        }
 
-      <div className="space-y-3">
+        lg:translate-x-0`}
+      >
+        {/* Top */}
 
-        {menuItems.map((item) => (
+        <div>
+          {/* Logo */}
 
-<NavLink
+          <div className="flex items-center justify-between px-6 py-8">
 
-key={item.name}
+            <div className="flex items-center gap-3">
 
-to={item.path}
+              <div className="bg-violet-600 p-3 rounded-xl">
 
-className={({ isActive }) =>
+                <Rocket
+                  size={20}
+                  className="text-white"
+                />
 
-`flex items-center gap-3 p-3 rounded-xl transition-all duration-300
+              </div>
 
-${
+              <h1 className="text-3xl font-bold text-violet-600">
 
-isActive
+                SkillSprint
 
-? "bg-violet-100 text-violet-600"
+              </h1>
 
-: "hover:bg-violet-50"
+            </div>
 
-}`
+            {/* Mobile Close */}
 
-}
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="lg:hidden"
+            >
+              <X size={24} />
+            </button>
 
->
+          </div>
 
-<span>
+          {/* Navigation */}
 
-{item.icon}
+          <div className="px-3 space-y-2">
 
-</span>
+            {menuItems.map((item) => (
 
-<span>
+              <NavLink
+                key={item.name}
+                to={item.path}
+                onClick={() => setSidebarOpen(false)}
+                className={({ isActive }) =>
+                  `flex items-center gap-4 px-5 py-4 rounded-2xl transition-all duration-300 font-medium
 
-{item.name}
+                  ${
+                    isActive
+                      ? "bg-violet-100 text-violet-600"
+                      : "hover:bg-violet-50 text-slate-700"
+                  }`
+                }
+              >
+                <span className="text-xl">
+                  {item.icon}
+                </span>
 
-</span>
+                <span>{item.name}</span>
 
-</NavLink>
+              </NavLink>
 
-))}
+            ))}
 
-      </div>
+          </div>
 
-    </aside>
+        </div>
 
+        {/* Bottom Card */}
+
+        <div className="m-4 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-3xl p-5 text-white">
+
+          <h3 className="font-bold text-lg">
+            👑 Keep Going!
+          </h3>
+
+          <p className="text-sm mt-3 opacity-90">
+            You're doing great.
+          </p>
+
+          <p className="text-sm">
+            Stay consistent every day.
+          </p>
+
+          <button className="mt-5 bg-white text-violet-600 px-4 py-2 rounded-xl text-sm font-semibold w-full">
+
+            View Progress →
+
+          </button>
+
+        </div>
+
+      </aside>
+    </>
   );
-
 }
 
 export default Sidebar;
