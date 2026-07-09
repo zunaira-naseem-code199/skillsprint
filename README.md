@@ -1,10 +1,24 @@
-# 🚀 SkillSprint
+# 🚀 SkillSprint – Learning Progress Tracker
 
-SkillSprint is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application that helps learners organize and track their learning journey. Users can manage goals, tasks, journals, certificates, profile, and personal settings through a clean and responsive dashboard.
+SkillSprint is a full-stack MERN application that helps learners manage their learning journey by tracking goals, tasks, journals, certificates, and personal progress in one place.
+
+The application provides a clean and responsive dashboard where users can organize their daily learning activities and monitor their achievements.
 
 ---
 
-## ✨ Features
+## 🌐 Live Demo
+
+**Frontend (Vercel):**
+[LIVE_LINK]
+https://skillsprint-wine.vercel.app
+
+**Backend (Railway):**
+[BACKEND_LINK]
+https://skillsprint-production-4d66.up.railway.app
+
+---
+
+## 📌 Features
 
 ### 🔐 Authentication
 - User Registration
@@ -13,138 +27,130 @@ SkillSprint is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web ap
 - Protected Routes
 
 ### 📊 Dashboard
-- Personalized Greeting
+- Learning Statistics
 - Weekly Progress
-- Statistics Overview
-- Upcoming Tasks
 - Recent Activity
 - Motivation Card
+- Upcoming Tasks
+- Goal Progress
 
-### 🎯 Goals
-- Create Goal
-- Edit Goal
-- Delete Goal
-- Mark Goal as Completed
-- Search Goals
-- Filter by Category
-- Filter by Status
+### 🎯 Goals Management
+- Add Goals
+- Update Goals
+- Delete Goals
+- Mark Goals as Completed
+- Search & Filter Goals
 
-### ✅ Tasks
-- Create Task
-- Update Task
-- Delete Task
-- Mark Task as Completed
-- Search Tasks
-- Filter by Status
-- Filter by Priority
+### ✅ Task Management
+- Create Tasks
+- Edit Tasks
+- Delete Tasks
+- Mark Tasks Complete
+- Filter Tasks
 
 ### 📖 Journal
-- Create Journal Entry
-- Edit Journal
-- Delete Journal
-- Mood Tracking
-- Search Journal
+- Create Journal Entries
+- Edit Entries
+- Delete Entries
+- Search Journals
 - Filter by Mood
+- Journal Statistics
 
 ### 🏆 Certificates
-- Add Certificate
-- Edit Certificate
-- Delete Certificate
+- Add Certificates
 - Upload Certificate Image
-- Add Credential Link
+- Edit Certificates
+- Delete Certificates
+- View Credential Link
 
 ### 👤 Profile
-- Update Profile Information
+- Update Personal Information
 - Upload Profile Picture
 - Update Bio
 
-### ⚙️ Settings
+### ⚙ Settings
 - Email Notifications
 - Daily Reminder
 - Logout
-
-### 📱 Responsive Design
-- Desktop
-- Tablet
-- Mobile
 
 ---
 
 # 🛠 Tech Stack
 
 ## Frontend
-
 - React.js
 - React Router DOM
-- Tailwind CSS
 - Axios
+- Tailwind CSS
 - Lucide React
-- React Icons
 
 ## Backend
-
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
 - JWT Authentication
-- bcryptjs
-- dotenv
+- bcrypt.js
+
+## Deployment
+- Frontend → Vercel
+- Backend → Railway
+- Database → MongoDB Atlas
 
 ---
 
 # 📂 Project Structure
 
 ```
-SkillSprint
+SkillSprint/
 │
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── layouts
-│   │   ├── services
-│   │   ├── assets
-│   │   └── App.jsx
-│   └── package.json
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── api/
 │
-├── backend
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── config
-│   ├── server.js
-│   └── package.json
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
 │
 └── README.md
 ```
 
 ---
 
-# 🚀 Installation
+# ⚙ Installation
 
-## 1. Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/zunaira-naseem-code199/skillsprint.git
+
+cd skillsprint
 ```
 
 ---
 
-## 2. Install Frontend Dependencies
+## Install Dependencies
 
-```bash
-cd client
-npm install
-```
-
----
-
-## 3. Install Backend Dependencies
+### Backend
 
 ```bash
 cd server
+
+npm install
+```
+
+### Frontend
+
+```bash
+cd client
+
 npm install
 ```
 
@@ -152,112 +158,72 @@ npm install
 
 # 🔑 Environment Variables
 
-## Backend (.env)
-
-Create a `.env` file inside the backend folder.
+Create a `.env` file inside the **server** folder.
 
 ```env
 PORT=5000
 
-MONGO_URI=your_mongodb_connection_string
+MONGODB_URI=your_mongodb_connection_string
 
 JWT_SECRET=your_secret_key
 ```
 
 ---
 
-## Frontend (.env)
+# ▶ Run the Project
 
-Create a `.env` file inside the frontend folder.
 
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
----
-
-# ▶️ Run the Project
-
-## Start Backend
+## Backend
 
 ```bash
 cd server
-node server.js
-```
 
-Backend runs on
+npm run dev
 
 ```
 http://localhost:5000
-```
 
----
-
-## Start Frontend
+## Frontend
 
 ```bash
-cd frontend
+cd client
+
 npm run dev
-```
 
 Frontend runs on
 
 ```
 http://localhost:5173
 ```
-
----
-
-# 📸 Screenshots
-
-Add project screenshots here after deployment.
-
----
-
-# 🌐 Live Demo
-
-Frontend
-
-```
-Coming Soon
-```
-
-Backend
-
-```
-Coming Soon
 ```
 
 ---
 
-# 🎥 Demo Video
-
-```
-Coming Soon
-```
-
----
-
-# 🔮 Future Improvements
+# 🚀 Future Improvements
 
 - Dark Mode
-- Password Reset
-- Email Verification
-- Progress Analytics
+- Email Notifications
 - Calendar Integration
-- Notifications
-- Drag & Drop Tasks
+- File Upload using Cloudinary
+- Learning Analytics
+- Password Reset
+- Mobile App
 - AI- powered SkillSprint
+
 ---
 
 # 👩‍💻 Author
 
-Zunaira Naseem
+**Zunaira Naseem**
 
 GitHub: https://github.com/zunaira-naseem-code199
 
 ---
 
-## 📄 License
+# 📄 License
 
-This project is created for educational purposes.
+This project is developed for educational purposes.
+
+---
+
+## ⭐ If you like this project, don't forget to star the repository.
