@@ -1,21 +1,15 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/settings";
-
-const getToken = () => {
-  return localStorage.getItem("token");
-};
+import API from "../api/axios";
 
 const config = () => ({
   headers: {
-    Authorization: `Bearer ${getToken()}`,
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 });
 
 // Get Settings
 export const getSettings = async () => {
-  const response = await axios.get(
-    API_URL,
+  const response = await API.get(
+    "/settings",
     config()
   );
 
@@ -26,8 +20,8 @@ export const getSettings = async () => {
 export const updateSettings = async (
   settingsData
 ) => {
-  const response = await axios.put(
-    API_URL,
+  const response = await API.put(
+    "/settings",
     settingsData,
     config()
   );

@@ -1,29 +1,22 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/certificates";
-
-// Get Token
-const getToken = () => {
-  return localStorage.getItem("token");
-};
+import API from "../api/axios";
 
 // Axios Config
 const config = () => ({
   headers: {
-    Authorization: `Bearer ${getToken()}`,
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
 });
 
 // Get All Certificates
 export const getCertificates = async () => {
-  const response = await axios.get(API_URL, config());
+  const response = await API.get("/certificates", config());
   return response.data;
 };
 
 // Create Certificate
 export const createCertificate = async (certificateData) => {
-  const response = await axios.post(
-    API_URL,
+  const response = await API.post(
+    "/certificates",
     certificateData,
     config()
   );
@@ -36,8 +29,8 @@ export const updateCertificate = async (
   id,
   certificateData
 ) => {
-  const response = await axios.put(
-    `${API_URL}/${id}`,
+  const response = await API.put(
+    `/certificates/${id}`,
     certificateData,
     config()
   );
@@ -47,8 +40,8 @@ export const updateCertificate = async (
 
 // Delete Certificate
 export const deleteCertificate = async (id) => {
-  const response = await axios.delete(
-    `${API_URL}/${id}`,
+  const response = await API.delete(
+    `/certificates/${id}`,
     config()
   );
 
