@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import GoalStats from "../components/goals/GoalStats";
-import GoalFilters from "../components/goals/GoalFilters";
-import GoalList from "../components/goals/GoalList";
-import GoalModal from "../components/goals/GoalModal";
+import GoalStats from "../components/Goals/GoalStats";
+import GoalFilters from "../components/Goals/GoalFilters";
+import GoalList from "../components/Goals/GoalList";
+import GoalModal from "../components/Goals/GoalModal";
 
 import {
   getGoals,
